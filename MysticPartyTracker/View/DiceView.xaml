@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MysticPartyTracker.View.DiceView"
+             Title="DiceView">
+    <VerticalStackLayout
+        >
+    
+        <Label 
+            Text="Rolar Dados"
+            FontSize="16"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            Margin="20"
+            Text="0"
+            FontSize="80"
+            x:Name="ResultLabel"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+
+        
+        <Picker
+                TitleColor="DarkGray"
+                WidthRequest="300"
+                x:Name="SidesPicker"
+                Title="Quantidade de dados">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:Int32}">
+                    <x:Int32>4</x:Int32>
+                    <x:Int32>6</x:Int32>
+                    <x:Int32>8</x:Int32>
+                    <x:Int32>10</x:Int32>
+                    <x:Int32>12</x:Int32>
+                    <x:Int32>20</x:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        
+        <Picker
+               TitleColor="DarkGray"
+               WidthRequest="300"
+               x:Name="SidesPickerSecond"
+               Title="Selecionar quantidade da lados">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:Int32}">
+                    <x:Int32>4</x:Int32>
+                    <x:Int32>6</x:Int32>
+                    <x:Int32>8</x:Int32>
+                    <x:Int32>10</x:Int32>
+                    <x:Int32>12</x:Int32>
+                    <x:Int32>20</x:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button
+                Margin="50"
+                BackgroundColor="Black"
+                WidthRequest="300"
+                x:Name="RollBtn"
+                Text="Rolar" 
+                Clicked="RollBtn_Clicked" 
+                />
+
+        <Label  
+            Text="" 
+            x:Name=""
+            />
+
+    </VerticalStackLayout>
+</ContentPage>
