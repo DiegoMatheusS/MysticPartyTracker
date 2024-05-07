@@ -1,37 +1,43 @@
+using MysticPartyTracker.DiceViewModels;
 using MysticPartyTracker.Models;
 
 namespace MysticPartyTracker.View;
 
 public partial class DiceView : ContentPage
 {
+
 	public DiceView()
 	{
 		InitializeComponent();
-        SidesPicker.SelectedIndex = 0;
-        SidesPickerSecond.SelectedIndex = 0;
+        SidesQuantity.SelectedIndex = 1;
+        SidesPicker.SelectedIndex = 1;
+        BindingContext = new DiceViewModel();
     }
 	private void RollBtn_Clicked(object sender, EventArgs e)
 	{
-        //Instanciação de um novo objeto dice do tipoc Dice, atraves do construtor Dice()
-        int sidesNumnber = Convert.ToInt32(SidesPicker.SelectedItem);
-        Dice dice = new Dice(sidesNumnber);
-        ResultLabel.Text = Convert.ToString(dice.Side());
+       
 
-        try
-        {
-            int numberSiders = (int)SidesPicker.SelectedItem;
-            int quantity = (int)SidesPickerSecond.SelectedItem;
+         int numberSides = (int)SidesPicker.SelectedItem;
+         int quantity = (int)SidesQuantity.SelectedItem;
 
-            Dice side = new(numberSiders);
+         Dice dice = new(numberSides);
 
-            string finalResult = "";
-            int total = 0;
-            for (int i = 0; i < quantity; i++)
-            {
-                int roll = dice.Side();
-                total +=
-            }
-        }
+         string finalResult = "";
+         int total = 0;
 
-    }
+         for (int i = 0; i < quantity; i++)
+         {
+            int roll = dice.Roll();
+            Console.WriteLine(roll);
+            total += roll;
+            finalResult += $"Dado {i + 1} = {roll} \n";
+            if (i < quantity - 1)
+            finalResult += "\n";
+         }
+
+        resultString.Text = $"Foram jogados {quantity} dado(s) de {numberSides} lados.";
+
+
+}
+
 }

@@ -3,29 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MysticPartyTracker.View.DiceView"
              Title="DiceView">
-    <VerticalStackLayout
-        >
-    
-        <Label 
-            Text="Rolar Dados"
-            FontSize="16"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
 
-        <Label 
-            Margin="20"
-            Text="0"
-            FontSize="80"
-            x:Name="ResultLabel"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            />
-
-        
         <Picker
                 TitleColor="DarkGray"
                 WidthRequest="300"
-                x:Name="SidesPicker"
+                x:Name="SidesQuantity" SelectedItem="{Binding Quantity}"
                 Title="Quantidade de dados">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:Int32}">
@@ -34,41 +17,63 @@
                     <x:Int32>8</x:Int32>
                     <x:Int32>10</x:Int32>
                     <x:Int32>12</x:Int32>
+                    <x:Int32>14</x:Int32>
+                    <x:Int32>16</x:Int32>
+                    <x:Int32>18</x:Int32>
                     <x:Int32>20</x:Int32>
+                    <x:Int32>50</x:Int32>
+                    <x:Int32>70</x:Int32>
+                    <x:Int32>100</x:Int32>
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        
+
         <Picker
                TitleColor="DarkGray"
                WidthRequest="300"
-               x:Name="SidesPickerSecond"
+               x:Name="SidesPicker" SelectedItem="{Binding NumberSides}"
                Title="Selecionar quantidade da lados">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:Int32}">
                     <x:Int32>4</x:Int32>
                     <x:Int32>6</x:Int32>
-                    <x:Int32>8</x:Int32>
                     <x:Int32>10</x:Int32>
                     <x:Int32>12</x:Int32>
                     <x:Int32>20</x:Int32>
+                    <x:Int32>40</x:Int32>
+                    <x:Int32>60</x:Int32>
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
 
         <Button
+                x:Name="RollBtn"
                 Margin="50"
                 BackgroundColor="Black"
                 WidthRequest="300"
-                x:Name="RollBtn"
                 Text="Rolar" 
-                Clicked="RollBtn_Clicked" 
+                Command="{Binding RollCommand}"
                 />
 
         <Label  
-            Text="" 
-            x:Name=""
-            />
+            Text="{Binding Total}" 
+             x:Name="resultString"
+            FontSize="80"
+            HorizontalTextAlignment="Center"
+            
+            
+             />
+
+        <CollectionView ItemsSource="{Binding Rolls}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label FontSize="20" HorizontalTextAlignment="Center" Text="{Binding}"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
 
     </VerticalStackLayout>
 </ContentPage>

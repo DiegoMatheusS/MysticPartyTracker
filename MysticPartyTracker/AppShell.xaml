@@ -6,10 +6,17 @@
     xmlns:local="clr-namespace:MysticPartyTracker.View"
     Shell.FlyoutBehavior="Disabled"
     Title="MysticPartyTracker">
-
+    <TabBar>
     <ShellContent
         Title="Dice Roller"
         ContentTemplate="{DataTemplate local:DiceView}"
         Route="Dice" />
+
+        <ShellContent
+    Title="Personagens"
+    ContentTemplate="{DataTemplate local:CharacterView}"
+    Route="Character" />
+
+    </TabBar>
 
 </Shell>

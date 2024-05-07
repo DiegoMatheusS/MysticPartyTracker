@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MysticPartyTracker.View.CharacterView"
+             Title="CharacterView">
+    <ScrollView>
+    <VerticalStackLayout
+        VerticalOptions="Start"
+        HorizontalOptions="Center">
+
+        <HorizontalStackLayout
+            Padding="2"
+            VerticalOptions="Center"
+            >
+        <Label 
+            Text="Nome do Personagem" 
+            FontAttributes="Bold"
+            />
+        <Entry
+             x:Name="NameCharacter"
+            WidthRequest="100"
+
+            />
+
+
+         <Label 
+            Text="Nivel"
+            Padding="10"
+             FontAttributes="Bold"
+             />
+            
+         <Entry
+            x:Name="NameNivel"
+            WidthRequest="50"
+            />
+
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label 
+            Text="Classe do Personagem"
+                FontAttributes="Bold"
+                />
+
+        <Entry
+            x:Name="NameClasse"
+              WidthRequest="100"
+            />
+
+
+
+       </HorizontalStackLayout>
+        <HorizontalStackLayout>
+
+            <Label 
+            Text="Raça do Personagem"
+            Padding="10"
+            FontAttributes="Bold"
+             />
+
+            <Entry
+             x:Name="NameRace"
+              WidthRequest="100"
+            />
+        </HorizontalStackLayout>
+
+        <Button Grid.Column="0" Grid.Row="1"
+            x:Name="ButtonAdd" 
+                Margin="25"
+                Text="Adicionar"
+                FontSize="20"
+                BackgroundColor="Black"
+                Clicked="ButtonAdd_Clicked"
+                FontAttributes="Bold"      
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="150"
+            />
+
+        <Label 
+        Text=""
+        x:Name="LabelCharacter"
+        />
+
+            <Label 
+        Text=""
+        x:Name="LabelNivel"
+        />
+        
+         <Label 
+        Text=""
+        x:Name="LabelClasse"
+        />
+
+         <Label 
+        Text=""
+        x:Name="LabelRace"
+        />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
