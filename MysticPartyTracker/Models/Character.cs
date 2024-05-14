@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 
 namespace MysticPartyTracker.Models
 {
-    class Character
+    public class Character
     {
-        public string Name { get; set; } = string.Empty;
+        public Character(string name, string classe, int nivel, string race)
+        {
+            Name = name;
+            Classe = classe;
+            Nivel = nivel;
+            Race = race;
+        }
 
-        public string Classe { get; set; } = string.Empty;
+        public string Name { get; set; }
+
+        public string Classe { get; set; }
 
         public int Nivel { get; set; }
 
-        public string Race { get; set; } = string.Empty;
+        public string Race { get; set; }
 
         
-
     }
 }

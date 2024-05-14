@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\corintia.jpg" />
+	  <None Remove="Resources\Images\dotnet_rpg.png" />
 	</ItemGroup>
 
 	<ItemGroup>

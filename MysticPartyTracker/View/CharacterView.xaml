@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MysticPartyTracker.View.CharacterView"
              Title="CharacterView">
+    
     <ScrollView>
     <VerticalStackLayout
         VerticalOptions="Start"
@@ -13,37 +14,50 @@
             VerticalOptions="Center"
             >
         <Label 
-            Text="Nome do Personagem" 
+            
+            FontSize="18"
+            Text="Nome:" 
             FontAttributes="Bold"
+            Margin="0,10,10,0"
             />
         <Entry
              x:Name="NameCharacter"
+            Text="{Binding Name}"
+            Margin="0,0,50,0"
             WidthRequest="100"
-
+             FontSize="18"
             />
 
 
          <Label 
-            Text="Nivel"
+             FontSize="18"
+            Text="Nivel: "
+             Margin="10,0,10,0"
             Padding="10"
              FontAttributes="Bold"
              />
             
          <Entry
-            x:Name="NameNivel"
+            x:Name="NameNivel" 
+             Text="{Binding Nivel}"
             WidthRequest="50"
+           FontSize="18"
             />
 
         </HorizontalStackLayout>
         <HorizontalStackLayout>
             <Label 
+               FontSize="18"
             Text="Classe do Personagem"
                 FontAttributes="Bold"
+                x:Name="teste"
                 />
 
         <Entry
             x:Name="NameClasse"
+           Text="{Binding Classe}"
               WidthRequest="100"
+           FontSize="18"
             />
 
 
@@ -52,50 +66,78 @@
         <HorizontalStackLayout>
 
             <Label 
+             FontSize="18"
             Text="Raça do Personagem"
-            Padding="10"
             FontAttributes="Bold"
              />
 
             <Entry
-             x:Name="NameRace"
+             x:Name="NameRace" 
+              Text="{Binding Race}"
               WidthRequest="100"
+             FontSize="18"
             />
         </HorizontalStackLayout>
 
         <Button Grid.Column="0" Grid.Row="1"
             x:Name="ButtonAdd" 
+                Command="{Binding CreateCharacterCommand}"
                 Margin="25"
                 Text="Adicionar"
                 FontSize="20"
                 BackgroundColor="Black"
-                Clicked="ButtonAdd_Clicked"
                 FontAttributes="Bold"      
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 WidthRequest="150"
             />
 
-        <Label 
-        Text=""
-        x:Name="LabelCharacter"
-        />
+            <CollectionView ItemsSource="{Binding Characters}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Frame BorderColor="Gray"
+                                   CornerRadius="5"
+                                   Padding="8">
+                                <StackLayout>
+                                    <Label Text="Personagem Criado: "
+                                           FontSize="18"
+                                           FontAttributes="Bold" />
+                                    <BoxView Color="Gray"
+                                             HeightRequest="2"
+                                             />
+                                    <HorizontalStackLayout Padding="5">
+                                        <Label FontSize="18" Text="Nome: " />
+                                        <Label FontSize="18" HorizontalTextAlignment="Center" Text="{Binding Name}"/>
+                                        <Label FontSize="18" HorizontalOptions="End" Margin="100, 0, 10, 30" Text="Nivel: " />
+                                        <Label FontSize="18" HorizontalTextAlignment="End" Text="{Binding Nivel}"/>
 
-            <Label 
-        Text=""
-        x:Name="LabelNivel"
-        />
-        
-         <Label 
-        Text=""
-        x:Name="LabelClasse"
-        />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label  FontSize="18" HorizontalOptions="Start" Text="Classe: " />
+                                        <Label FontSize="18"  Text="{Binding Classe}"/>
+                                        </HorizontalStackLayout>
 
-         <Label 
-        Text=""
-        x:Name="LabelRace"
-        />
+                                    <HorizontalStackLayout>
+                                        <Label FontSize="18"  HorizontalOptions="Start" Margin="0" Text="Raça:  " />
+                                        <Label FontSize="18"   HorizontalTextAlignment="Start" Text="{Binding Race}"/>
+                                    </HorizontalStackLayout>
 
+                                    <Image
+                                        Source="dotnet.png"
+                                        Margin="0, 0, 0, 50"
+                                        HeightRequest="50"
+                                        Aspect="AspectFit"
+                                         SemanticProperties.Description="dot net bot in a race car number eight" />
+                                        
+                                </StackLayout>
+                            </Frame>
+
+                            
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </VerticalStackLayout>
     </ScrollView>
