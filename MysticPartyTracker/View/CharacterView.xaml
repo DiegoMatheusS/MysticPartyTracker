@@ -14,9 +14,8 @@
             VerticalOptions="Center"
             >
         <Label 
-            
             FontSize="18"
-            Text="Nome:" 
+            Text=" Nome:" 
             FontAttributes="Bold"
             Margin="0,10,10,0"
             />
@@ -48,7 +47,7 @@
         <HorizontalStackLayout>
             <Label 
                FontSize="18"
-            Text="Classe do Personagem"
+            Text=" Classe do Personagem"
                 FontAttributes="Bold"
                 x:Name="teste"
                 />
@@ -60,14 +59,12 @@
            FontSize="18"
             />
 
-
-
        </HorizontalStackLayout>
         <HorizontalStackLayout>
 
             <Label 
              FontSize="18"
-            Text="Raça do Personagem"
+            Text=" Raça do Personagem"
             FontAttributes="Bold"
              />
 
@@ -114,31 +111,33 @@
 
                                     </HorizontalStackLayout>
                                     <HorizontalStackLayout>
-                                        <Label  FontSize="18" HorizontalOptions="Start" Text="Classe: " />
+                                        <Label  FontSize="18" HorizontalOptions="Start" Text=" Classe: " />
                                         <Label FontSize="18"  Text="{Binding Classe}"/>
                                         </HorizontalStackLayout>
 
                                     <HorizontalStackLayout>
-                                        <Label FontSize="18"  HorizontalOptions="Start" Margin="0" Text="Raça:  " />
+                                        <Label FontSize="18"  HorizontalOptions="Start" Margin="0" Text=" Raça:  " />
                                         <Label FontSize="18"   HorizontalTextAlignment="Start" Text="{Binding Race}"/>
+                                        
                                     </HorizontalStackLayout>
 
                                     <Image
-                                        Source="dotnet.png"
-                                        Margin="0, 0, 0, 50"
-                                        HeightRequest="50"
+                                        WidthRequest="100"
+                                        Source="dotnet_rpg.png"
+                                        Margin="210, -50, 0, 0"
+                                        HeightRequest="100"
                                         Aspect="AspectFit"
-                                         SemanticProperties.Description="dot net bot in a race car number eight" />
+                                          />
                                         
                                 </StackLayout>
                             </Frame>
+               
 
-                            
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

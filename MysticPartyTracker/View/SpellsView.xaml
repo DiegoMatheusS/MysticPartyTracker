@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MysticPartyTracker.View.SpellsView"
+             Title="SpellsView">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <CollectionView ItemsSource="{Binding }" EmptyView="Não tem os Dados" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Frame BorderColor="Black"
+                               CornerRadius="5"
+                               Padding="8"
+                               BackgroundColor="Azure"
+                               Margin="100,10,100,15"
+                                     >
+
+                            <StackLayout>
+
+                                <HorizontalStackLayout>
+
+                                    <Label Text="ID:"
+                               FontAttributes="Bold"/>
+                                    <Label
+                            Text="{Binding Results }"
+                                   Margin="5 ,0,0,0"    
+                             />
+
+                                </HorizontalStackLayout>
+                                <BoxView Color="Black"
+                            HeightRequest="3"
+                            CornerRadius="5"
+                             />
+
+                                <HorizontalStackLayout>
+                                    <Label
+                            
+                            Text="Title:"
+                            FontSize="Large"/>
+                                    <Label
+                            Text="{Binding Count }"
+                                        Margin="10,15,0,15"
+                                        FontSize="18"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout >
+                                    <Label
+                            Text="Body:"
+                            Margin="0,10,0,0"
+                            FontAttributes="Bold"/>
+                                    <Label
+                            Text="{Binding index }"
+                                    Margin="10,10,0,0"
+                            />
+
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label
+                               Text="Index:"
+                               Margin="0,10,0,0"
+                               FontAttributes="Bold"/>
+                                    <Label
+                                Text="{Binding index }"
+                                Margin="10,10,0,0"
+                                    />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label
+                               Text="Name:"
+                               Margin="0,10,0,0"
+                               FontAttributes="Bold"/>
+                                    <Label
+                                Text="{Binding Name }"
+                                Margin="10,10,0,0"
+                                    />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label
+                               Text="Url:"
+                               Margin="0,10,0,0"
+                               FontAttributes="Bold"/>
+                                    <Label
+                                Text="{Binding Url }"
+                                Margin="10,10,0,0"
+                                    />
+                                </HorizontalStackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+        Text="Buscar Spells"
+        Margin="0,0,0,0"
+        WidthRequest="160"
+        Command="{Binding CreateSpellsCommand }"/>
+    </VerticalStackLayout>
+</ContentPage>
